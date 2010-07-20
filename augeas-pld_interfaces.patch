@@ -1,0 +1,18 @@
+--- augeas-0.7.2/lenses/shellvars.aug	2010-06-17 14:47:48.000000000 +0200
++++ augeas-0.7.2/lenses/shellvars.aug_new	2010-07-20 09:21:53.769092769 +0200
+@@ -65,6 +65,7 @@ module Shellvars =
+       sc_incl "httpd" .
+       sc_incl "i18n" .
+       sc_incl "init" .
++      sc_incl "interfaces" .
+       sc_incl "iptables-config" .
+       sc_incl "irda" .
+       sc_incl "irqbalance" .
+@@ -98,6 +99,7 @@ module Shellvars =
+ 
+   let filter_ifcfg   = incl "/etc/sysconfig/network-scripts/ifcfg-*"
+                      . incl "/etc/sysconfig/network/ifcfg-*"
++                     . incl "/etc/sysconfig/interfaces/ifcfg-*"
+   let filter_default = incl "/etc/default/*"
+   let filter_misc    = incl "/etc/arno-iptables-firewall/debconf.cfg"
+                      . incl "/etc/cron-apt/config"
