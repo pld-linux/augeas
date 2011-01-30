@@ -3,12 +3,13 @@ Summary(pl.UTF-8):	Augeas to narzędzie do edytowania konfiguracji
 Name:		augeas
 Version:	0.7.2
 Release:	0.2
-License:	GPLv2
+License:	GPL v2
 Group:		Applications/System
 Source0:	http://augeas.net/download/%{name}-%{version}.tar.gz
 # Source0-md5:	0fe232b7f37a6e468e81019895fd01f4
 Patch0:		%{name}-pld_interfaces.patch
 URL:		http://augeas.net
+BuildRequires:	readline-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -57,7 +58,7 @@ Ten pakiet zawiera statyczne biblioteki augeasa.
 %patch0 -p1
 
 %build
-%configure 
+%configure
 
 %{__make}
 
@@ -79,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/augparse
 %attr(755,root,root) %{_bindir}/augtool
 %attr(755,root,root) %{_bindir}/fadot
-%{_datadir}/augeas  
+%{_datadir}/augeas
 %{_mandir}/man1/augparse.1.*
 %{_mandir}/man1/augtool.1.*
 #%{_datadir}/vim/vimfiles/ftdetect/augeas.vim
