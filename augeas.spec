@@ -1,12 +1,12 @@
 Summary:	Augeas is configuration editing tool
 Summary(pl.UTF-8):	Augeas to narzędzie do edytowania konfiguracji
 Name:		augeas
-Version:	0.7.2
-Release:	0.2
+Version:	0.8.0
+Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://augeas.net/download/%{name}-%{version}.tar.gz
-# Source0-md5:	0fe232b7f37a6e468e81019895fd01f4
+# Source0-md5:	e425bcfc46fd5b18473a4ff47c2878d3
 Patch0:		%{name}-pld_interfaces.patch
 URL:		http://augeas.net
 BuildRequires:	readline-devel
