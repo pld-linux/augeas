@@ -1,12 +1,12 @@
 Summary:	Augeas - configuration editing tool
 Summary(pl.UTF-8):	Augeas - narzędzie do modyfikowania konfiguracji
 Name:		augeas
-Version:	0.8.1
+Version:	0.9.0
 Release:	1
 License:	LGPL v2.1+
 Group:		Applications/System
 Source0:	http://augeas.net/download/%{name}-%{version}.tar.gz
-# Source0-md5:	62d47bdc60e175f93aed3b81cb8e2785
+# Source0-md5:	5ef0ce53ce4c75f59ab2523506731084
 Patch0:		%{name}-pld_interfaces.patch
 URL:		http://augeas.net
 BuildRequires:	libselinux-devel
@@ -63,6 +63,19 @@ This package contains augeas static libraries.
 %description static -l pl.UTF-8
 Ten pakiet zawiera statyczne biblioteki augeasa.
 
+%package -n vim-syntax-augeas
+Summary:	Augeas syntax rules for Vim
+Summary(pl.UTF-8):	Reguły składni Augeasa dla Vima
+Group:		Applications/Editors/Vim
+# for _vimdatadir existence
+Requires:	vim-rt >= 4:6.3.058-3
+
+%description -n vim-syntax-augeas
+Augeas syntax rules for Vim.
+
+%description -n vim-syntax-augeas -l pl.UTF-8
+Reguły składni Augeasa dla Vima.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -93,8 +106,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/augeas
 %{_mandir}/man1/augparse.1*
 %{_mandir}/man1/augtool.1*
-#%{_datadir}/vim/vimfiles/ftdetect/augeas.vim
-#%{_datadir}/vim/vimfiles/syntax/augeas.vim
 
 %files libs
 %defattr(644,root,root,755)
@@ -117,3 +128,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libaugeas.a
 %attr(755,root,root) %{_libdir}/libfa.a
+
+%files -n vim-syntax-augeas
+%defattr(644,root,root,755)
+%{_datadir}/vim/vimfiles/ftdetect/augeas.vim
+%{_datadir}/vim/vimfiles/syntax/augeas.vim
