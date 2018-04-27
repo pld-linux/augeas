@@ -1,12 +1,12 @@
 Summary:	Augeas - configuration editing tool
 Summary(pl.UTF-8):	Augeas - narzędzie do modyfikowania konfiguracji
 Name:		augeas
-Version:	1.8.0
+Version:	1.10.1
 Release:	1
 License:	LGPL v2.1+
 Group:		Applications/System
 Source0:	http://download.augeas.net/%{name}-%{version}.tar.gz
-# Source0-md5:	cc99cf86ec5f5c4dac71f2800bde2758
+# Source0-md5:	6c0b2ea6eec45e8bc374b283aedf27ce
 Patch0:		%{name}-pld_interfaces.patch
 URL:		http://augeas.net/
 BuildRequires:	libselinux-devel
@@ -103,10 +103,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
+%attr(755,root,root) %{_bindir}/augmatch
 %attr(755,root,root) %{_bindir}/augparse
 %attr(755,root,root) %{_bindir}/augtool
 %attr(755,root,root) %{_bindir}/fadot
 %{_datadir}/augeas
+%{_mandir}/man1/augmatch.1*
 %{_mandir}/man1/augparse.1*
 %{_mandir}/man1/augtool.1*
 
